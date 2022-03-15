@@ -6,18 +6,13 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:36:13 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/10 17:30:29 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/15 18:09:54 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
-int	ft_nblen(int number, int base)
+size_t	ft_nblen(int number, int base)
 {
 	int	len;
 
@@ -32,33 +27,25 @@ int	ft_nblen(int number, int base)
 	return (len);
 }
 
-int	ft_scale(int number, int base)
+size_t	ft_ullen(unsigned long int number, unsigned long int base)
 {
-	int	scale;
+	int	len;
 
-	scale = 1;
-	while (number >= base || number <= -base)
+	len = 1;
+	while (number >= base)
 	{
-		scale *= base;
 		number /= base;
+		len++;
 	}
-	return (scale);
+	return (len);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_base_fd(unsigned long int n, char *base, int fd)
 {
-	int	scale;
+	size_t	size;
 
-	scale = ft_scale(n, 10);
-	if (n < 0)
-		ft_putchar_fd('-', fd);
-	while (scale != 0)
-	{
-		if (n >= 0)
-			ft_putchar_fd(n / scale + 48, fd);
-		else
-			ft_putchar_fd(-(n / scale) + 48, fd);
-		n %= scale;
-		scale /= 10;
-	}
+	size = ft_strlen(base);
+	if (n > size - 1)
+		ft_putnbr_base_fd((n / size), base, fd);
+	ft_putchar_fd(base[n % size], fd);
 }
