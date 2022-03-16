@@ -6,7 +6,7 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 16:36:13 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/15 18:09:54 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/16 16:36:25 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,32 @@ void	ft_putnbr_base_fd(unsigned long int n, char *base, int fd)
 	if (n > size - 1)
 		ft_putnbr_base_fd((n / size), base, fd);
 	ft_putchar_fd(base[n % size], fd);
+}
+
+static unsigned int	ft_scale(
+	unsigned int number,
+	unsigned int base)
+{
+	unsigned int	scale;
+
+	scale = 1;
+	while (number >= base)
+	{
+		scale *= base;
+		number /= base;
+	}
+	return (scale);
+}
+
+void	ft_print_uint_fd(unsigned int n, int fd)
+{
+	int	scale;
+
+	scale = ft_scale(n, 10);
+	while (scale != 0)
+	{
+		ft_putchar_fd(n / scale + 48, fd);
+		n %= scale;
+		scale /= 10;
+	}
 }
