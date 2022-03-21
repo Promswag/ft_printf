@@ -6,7 +6,7 @@
 #    By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 13:33:16 by gbaumgar          #+#    #+#              #
-#    Updated: 2022/03/16 17:55:09 by gbaumgar         ###   ########.fr        #
+#    Updated: 2022/03/21 17:34:09 by gbaumgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRC_DIR 		= ./src/
 OUT_DIR			= ./
 SRC				=	ft_printf.c ft_printf_utils.c\
 					ft_printf_display_char.c ft_printf_display_str.c ft_printf_display_ptr.c\
-					ft_printf_display_int.c ft_printf_display_uint.c ft_printf_display_hex.c
+					ft_printf_display_int.c ft_printf_display_uint.c ft_printf_display_hex.c\
+					ft_printf_display_conv.c
 OBJS			= ${SRC:%.c=${OUT_DIR}%.o}
 
 AR				= ar rc
