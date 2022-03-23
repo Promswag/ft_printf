@@ -6,7 +6,7 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:30:47 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/21 19:32:21 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/23 16:07:07 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int	main(void)
 	std += printf(">>> %i <<<\n", printf("%i | %i | %i | %i | %i | %i | %i | %i | %i | %i | %i | ", 0, 1, -1, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, LLONG_MAX, LLONG_MIN, NULL));
 	new == std ? : r++;
 	/* ********************************************************************** */
-	
+
 	/* ********************************************************************** */
 	/* UINT */
 	new += ft_printf(">>> %i <<<\n", ft_printf("%u | %u | %u | %u | %u | %u | %u | %u | %u | %u | %u | ", 0, 1, -1, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, LLONG_MAX, LLONG_MIN, NULL));
@@ -132,18 +132,99 @@ int	main(void)
 	// std += printf(">>> %i <<<\n", printf("%X | %X | %X | %X | %X | %X | %X | %X | %X | %X | %X | ", 0, 1, -1, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, LLONG_MAX, LLONG_MIN, NULL));
 	// new == std ? : r++;
 	// new += ft_printf(">>> %i <<<\n", ft_printf("%#x | ", 0));
-	std += printf(">>> %i <<<\n", printf("% d | ", -500));
-	std += printf(">>> %i <<<\n", printf("% d | ", 500));
-	std += printf(">>> %i <<<\n", printf("%+d | ", -500));
-	std += printf(">>> %i <<<\n", printf("%+d | ", 500));
-	std += printf(">>> %i <<<\n", printf("% | ", 500));
+	// std += printf(">>> %i <<<\n", printf("% d | ", -500));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", -500));
+	// std += printf(">>> %i <<<\n", printf("% d | ", 500));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", 500));
+	// std += printf(">>> %i <<<\n", printf("% d | ", 0));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", 0));
+	// std += printf(">>> %i <<<\n", printf("% d | ", -1));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", -1));
+	// std += printf(">>> %i <<<\n", printf("% d | ", LLONG_MIN));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", LLONG_MIN));
+	// std += printf(">>> %i <<<\n", printf("% d | ", LLONG_MAX));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", LLONG_MAX));
+	// std += printf(">>> %i <<<\n", printf("% d | ", INT_MIN));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", INT_MIN));
+	// std += printf(">>> %i <<<\n", printf("% d | ", INT_MAX));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", INT_MAX));
+	// std += printf(">>> %i <<<\n", printf("% d | ", LONG_MIN));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", LONG_MAX));
+	// std += printf(">>> %i <<<\n", printf("% d | ", LONG_MIN));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", LONG_MAX));
+	// std += printf(">>> %i <<<\n", printf("% d | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("% d | ", "xD"));
+	// std += printf(">>> %i <<<\n", printf("%+d | ", "xD"));
+	// std += printf(">>> %i <<<\n", printf("% s | ", "xD"));
+	// std += printf(">>> %i <<<\n", printf("%+s | ", "xD"));
+	// std += printf(">>> %i <<<\n", printf("% c | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("%+c | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("% x | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("%+x | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("% X | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("%+X | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("% p | ", 'c'));
+	// std += printf(">>> %i <<<\n", printf("%+p | ", 'c'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", 123));
+	std += printf(">>> %i <<<\n", printf("%# d | ", 123));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", INT_MAX));
+	std += printf(">>> %i <<<\n", printf("%# d | ", INT_MAX));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", INT_MIN));
+	std += printf(">>> %i <<<\n", printf("%# d | ", INT_MIN));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", LONG_MAX));
+	std += printf(">>> %i <<<\n", printf("%# d | ", LONG_MAX));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", LONG_MIN));
+	std += printf(">>> %i <<<\n", printf("%# d | ", LONG_MIN));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", LLONG_MAX));
+	std += printf(">>> %i <<<\n", printf("%# d | ", LLONG_MAX));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", LLONG_MIN));
+	std += printf(">>> %i <<<\n", printf("%# d | ", LLONG_MIN));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", UINT_MAX));
+	std += printf(">>> %i <<<\n", printf("%# d | ", UINT_MAX));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% d | ", -123));
+	std += printf(">>> %i <<<\n", printf("% d | ", -123));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% i | ", 456));
+	std += printf(">>> %i <<<\n", printf("% i | ", 456));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% i | ", -456));
+	std += printf(">>> %i <<<\n", printf("% i | ", -456));
+	new += ft_printf(">>> %i <<<\n", ft_printf("% c | ", 'c'));
+	std += printf(">>> %i <<<\n", printf("% c | ", 'c'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+d | ", 123));
+	std += printf(">>> %i <<<\n", printf("%#+d | ", 123));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+d | ", -123));
+	std += printf(">>> %i <<<\n", printf("%+d | ", -123));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+i | ", 456));
+	std += printf(">>> %i <<<\n", printf("%+i | ", 456));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+i | ", -456));
+	std += printf(">>> %i <<<\n", printf("%+i | ", -456));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+c | ", 'c'));
+	std += printf(">>> %i <<<\n", printf("%+c | ", 'c'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+x | ", "lol"));
+	std += printf(">>> %i <<<\n", printf("%+x | ", "lol"));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%#x%  d | ", 'c', 't'));
+	std += printf(">>> %i <<<\n", printf("%#x%  d | ", 'c', 't'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%#x%##x | ", 'c', 't'));
+	std += printf(">>> %i <<<\n", printf("%#x%##x | ", 'c', 't'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%#", 'c', 't'));
+	std += printf(">>> %i <<<\n", printf("%#", 'c', 't'));
+	new += ft_printf(">>> %i <<<\n", ft_printf("", 'c', 't'));
+	std += printf(">>> %i <<<\n", printf("", 'c', 't'));
 	/* ********************************************************************** */
 
 	/* ********************************************************************** */
-	/* HEXU */
-	// new += ft_printf(">>> %i <<<\n", ft_printf("%X | %X | %X | %X | %X | %X | %X | %X | %X | %X | %X | ", 0, 1, -1, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, LLONG_MAX, LLONG_MIN, NULL));
-	// std += printf(">>> %i <<<\n", printf("%X | %X | %X | %X | %X | %X | %X | %X | %X | %X | %X | ", 0, 1, -1, INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, LLONG_MAX, LLONG_MIN, NULL));
-	// new == std ? : r++;
+	/* ULTIMATE */
+	new += ft_printf(">>> %i <<<\n", ft_printf("%c | %s | %p | %d | %i | %u | %x | %X | %#d | % d | %+d | %k | ", 'c', "lol", "lol", -42, -69, -42, INT_MAX, LLONG_MIN, -15, -15, -15, 'c', NULL));
+	std += printf(">>> %i <<<\n", printf("%c | %s | %p | %d | %i | %u | %x | %X | %#d | % d | %+d | %k | ", 'c', "lol", "lol", -42, -69, -42, INT_MAX, LLONG_MIN, -15, -15, -15, 'c', NULL));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%### + #", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	std += printf(">>> %i <<<\n", printf("%### + #", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%###d | %## +i | %|||%%|%||%##||#+ +%|# ||||| %# +# +%     ++++d", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	std += printf(">>> %i <<<\n", printf("%###d | %## +i | %|||%%|%||%##||#+ +%|# ||||| %# +# +%     ++++d", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%   x | %   d | %   i | % # +d | %+ + #+ x", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	std += printf(">>> %i <<<\n", printf("%   x | %   d | %   i | % # +d | %+ + #+ x", 0, 1, 2, 3, 4, 6, 7, 8, 9));
+	new += ft_printf(">>> %i <<<\n", ft_printf("%+x | %+#+x | % + + +#X | %####+X | %+ ##+p", 0, 1, -2, -3, 4, 6, 7, 8, 9));
+	std += printf(">>> %i <<<\n", printf("%+x | %+#+x | % + + +#X | %####+X | %+ ##+p", 0, 1, -2, -3, 4, 6, 7, 8, 9));
+	new == std ? : r++;
 	/* ********************************************************************** */
 
 	ft_printf("DIFF: %d | OWN: %d | STD: %d\n", r, new, std);
