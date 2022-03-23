@@ -6,14 +6,11 @@
 #    By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 13:33:16 by gbaumgar          #+#    #+#              #
-#    Updated: 2022/03/23 13:42:03 by gbaumgar         ###   ########.fr        #
+#    Updated: 2022/03/23 16:42:43 by gbaumgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			= libftprintf.a
-
-LIBFT			= libft.a
-LIBFT_DIR 		= ./libft/
 
 INCLUDE_DIR 	= ./include/
 SRC_DIR 		= ./src/
@@ -26,27 +23,21 @@ OBJS			= ${SRC:%.c=${OUT_DIR}%.o}
 
 AR				= ar rc
 CC				= gcc
-# CFLAGS			= -Wall -Wextra -Werror -I${INCLUDE_DIR} -I${LIBFT_DIR}
 CFLAGS			= -Wall -Wextra -Werror -I${INCLUDE_DIR}
 RM				= rm -f
 
 all: ${NAME}
 
-$(NAME): ${OBJS} $(LIBFT)
+$(NAME): ${OBJS}
 	${AR} ${NAME} ${OBJS} 
-
-$(LIBFT):
-	$(MAKE) -C ${LIBFT_DIR}
 
 ${OUT_DIR}%.o: ${SRC_DIR}%.c 
 	${CC} ${CFLAGS} $< -c -o $@
 
 clean:
-	$(MAKE) clean -C ${LIBFT_DIR}
 	${RM} ${OBJS} ${BOBJS}
 
 fclean:	clean
-	$(MAKE) fclean -C ${LIBFT_DIR}
 	${RM} ${NAME}
 
 re: fclean ${NAME}

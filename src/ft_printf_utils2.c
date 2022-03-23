@@ -1,16 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_printf_utils2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 15:31:00 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/02/28 16:29:18 by gbaumgar         ###   ########.fr       */
+/*   Created: 2022/03/23 16:43:20 by gbaumgar          #+#    #+#             */
+/*   Updated: 2022/03/23 16:48:46 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	l;
+
+	l = 0;
+	while (s[l])
+		l++;
+	return (l);
+}
+
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
+void	ft_putstr_fd(char *s, int fd)
+{
+	if (s)
+		write(fd, s, ft_strlen(s));
+}
 
 static int	ft_scale(int number, int base)
 {
