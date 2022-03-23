@@ -6,7 +6,7 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:23:51 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/23 16:49:04 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/23 17:38:34 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int		ft_printf_display_str(char *str);
 int		ft_printf_display_ptr(void *ptr, int format);
 int		ft_printf_display_int(int n);
 int		ft_printf_display_uint(unsigned long int n);
-int		ft_printf_display_hexl(unsigned int n, t_printf_status *x);
-int		ft_printf_display_hexu(unsigned int n, t_printf_status *x);
+int		ft_printf_display_hexl(unsigned int n, t_printf_status *status);
+int		ft_printf_display_hexu(unsigned int n, t_printf_status *status);
 int		ft_printf_display_hash(void *data, char c, const char **str,
 			t_printf_status *status);
 int		ft_printf_display_space(void *data, char c, const char **str,
