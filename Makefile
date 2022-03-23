@@ -6,7 +6,7 @@
 #    By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/10 13:33:16 by gbaumgar          #+#    #+#              #
-#    Updated: 2022/03/23 16:55:12 by gbaumgar         ###   ########.fr        #
+#    Updated: 2022/03/23 18:34:57 by gbaumgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,12 +35,13 @@ ${OUT_DIR}%.o: ${SRC_DIR}%.c
 	${CC} ${CFLAGS} $< -c -o $@
 
 clean:
-	${RM} ${OBJS} ${BOBJS}
+	${RM} ${OBJS}
 
 fclean:	clean
 	${RM} ${NAME}
 
 re: fclean ${NAME}
 
-bonus:	${BOBJS} ${OBJS}
-	ar rc ${NAME} ${OBJS} ${BOBJS}
+bonus:	all
+
+.PHONY:	all clean fclean re bonus
