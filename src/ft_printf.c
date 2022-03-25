@@ -6,7 +6,7 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:28:43 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/23 18:32:10 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:12:02 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,33 +17,33 @@ void	ft_printf_init_status(t_printf_status *status)
 	status->hash = 0;
 }
 
-int	ft_printf_flags_list(void *data, int format, const char **str,
+int	ft_printf_flags_list(va_list *args, int format, const char **str,
 	t_printf_status *status)
 {
 	if (format == '\0')
 		return (0);
 	else if (format == 'c')
-		return (ft_printf_display_char((int)data));
+		return (ft_printf_display_char(args));
 	else if (format == 's')
-		return (ft_printf_display_str((char *)data));
+		return (ft_printf_display_str(args));
 	else if (format == 'p')
-		return (ft_printf_display_ptr((void *)data, 0));
+		return (ft_printf_display_ptr(args, 0));
 	else if (format == 'd' || format == 'i')
-		return (ft_printf_display_int((int)data));
+		return (ft_printf_display_int(args));
 	else if (format == 'u')
-		return (ft_printf_display_uint((unsigned int)data));
+		return (ft_printf_display_uint(args));
 	else if (format == 'x')
-		return (ft_printf_display_hexl((int)data, status));
+		return (ft_printf_display_hexl(args, status));
 	else if (format == 'X')
-		return (ft_printf_display_hexu((int)data, status));
+		return (ft_printf_display_hexu(args, status));
 	else if (format == '#')
-		return (ft_printf_display_hash((void *)data, *++*str, str, status));
+		return (ft_printf_display_hash(args, *++*str, str, status));
 	else if (format == ' ')
-		return (ft_printf_display_space((void *)data, *++*str, str, status));
+		return (ft_printf_display_space(args, *++*str, str, status));
 	else if (format == '+')
-		return (ft_printf_display_sign((void *)data, *++*str, str, status));
+		return (ft_printf_display_sign(args, *++*str, str, status));
 	else
-		return (ft_printf_display_char(format));
+		return (ft_printf_display_default(format));
 }
 
 int	ft_printf(const char *args, ...)
@@ -60,10 +60,9 @@ int	ft_printf(const char *args, ...)
 	while (*args != '\0')
 	{
 		if (*args == '%')
-			cc += ft_printf_flags_list(
-					va_arg(args_list, void *), *++args, &args, &status);
+			cc += ft_printf_flags_list(&args_list, *++args, &args, &status);
 		else
-			cc += ft_printf_display_char(*args);
+			cc += ft_printf_display_default(*args);
 		if (*args != '\0')
 			args++;
 	}

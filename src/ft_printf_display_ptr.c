@@ -6,14 +6,17 @@
 /*   By: gbaumgar <gbaumgar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 14:09:31 by gbaumgar          #+#    #+#             */
-/*   Updated: 2022/03/21 18:36:11 by gbaumgar         ###   ########.fr       */
+/*   Updated: 2022/03/25 15:48:58 by gbaumgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf_display_ptr(void *ptr, int format)
+int	ft_printf_display_ptr(va_list *args, int format)
 {
+	void	*ptr;
+
+	ptr = va_arg(*args, void *);
 	if (ptr)
 	{
 		if (format)
